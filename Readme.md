@@ -25,7 +25,7 @@ Student Manager is a PHP-based web application that allows administrators to man
 
 ## Demo
 
-You can view a live demo of the application at [http://studentmanager.free.nf/?i=1](http://studentmanager.free.nf/?i=1)
+You can view a live demo of the application at [https://studentmanager.free.nf/?i=1](https://studentmanager.free.nf/?i=1)
 
 ## Installation
 
