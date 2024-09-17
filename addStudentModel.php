@@ -7,6 +7,11 @@
       </div>
       <div class="modal-body">
         <form action="addstudent.php" method="post">
+          <?php
+          /**
+           * The form elements for adding a new student
+           */
+          ?>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Roll:</label>
             <input type="number" class="form-control" id="roll" name="roll">
@@ -18,21 +23,29 @@
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Semester:</label>
             <select name="semester" id="" class="form-control">
-              <option value="1st">1st</option>
-              <option value="2nd">2nd</option>
-              <option value="3rd">3rd</option>
-              <option value="4th">4th</option>
-              <option value="5th">5th</option>
-              <option value="6th">6th</option>
-              <option value="7th">7th</option>
-              <option value="8th">8th</option>
+              <?php
+              /**
+               * The list of semesters from which the user can select
+               */
+              $semesters = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
+              foreach ($semesters as $semester) {
+                echo "<option value=\"$semester\">$semester</option>";
+              }
+              ?>
             </select>
           </div>
            <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Shift</label>
             <select name="shift" id="shift" class="form-control">
-              <option value="1st">1st</option>
-              <option value="2nd">2nd</option>
+              <?php
+              /**
+               * The list of shifts from which the user can select
+               */
+              $shifts = ['1st', '2nd'];
+              foreach ($shifts as $shift) {
+                echo "<option value=\"$shift\">$shift</option>";
+              }
+              ?>
             </select>
           </div>
            <div class="mb-3">
@@ -40,6 +53,11 @@
             <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
           </div>
           
+          <?php
+          /**
+           * The buttons to submit the form and close the modal
+           */
+          ?>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" name="addBtn" class="btn btn-primary">Add Student</button>

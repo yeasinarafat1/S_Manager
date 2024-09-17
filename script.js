@@ -1,11 +1,16 @@
-let searchInp = document.getElementById("searchInput");
-searchInp.addEventListener("input", function () {
-  let searchTerm = this.value.toLowerCase();
+/**
+ * Event listener for the search input field.
+ * When the user types something in the field, this function is called.
+ * It searches for the typed text in the table and shows or hides the rows accordingly.
+ * @param {Event} event the event object
+ */
+searchInp.addEventListener("input", function (event) {
+  let searchTerm = event.target.value.toLowerCase();
   let table = document.getElementById("myTable");
   let rows = table.getElementsByTagName("tr");
   let noSearchResult = document.getElementById("noSearchResult");
+
   // Iterate through table rows (skip header row)
-  // console.log(rows[0]);
   let isNoSearch = [];
   let SearchResultText = document.getElementById("SearchResult");
   if (searchTerm) {
@@ -17,17 +22,10 @@ searchInp.addEventListener("input", function () {
 
   for (let i = 1; i < rows.length; i++) {
     let row = rows[i];
-    // console.log(row);
-
     let cells = row.getElementsByTagName("td");
-    console.log(cells);
-
     let rowText = "";
-    // console.log(cells);
-    // Concatenate all text content of the row cells
     for (let j = 0; j < cells.length; j++) {
       rowText += cells[j].textContent.toLowerCase() + " ";
-      // console.log(rowText);
     }
 
     // Check if the search term is found in the row text
@@ -46,16 +44,16 @@ searchInp.addEventListener("input", function () {
     noSearchResult.classList.add("hidden");
   }
 });
-//Todo Add a keyboard shortcut to quickly search
-// document.addEventListener("keydown", (e) => {
-//   if (e.key === "Control") {
-//     document.addEventListener("keydown", (e) => {
-//       if (e.key === "K") {
-//         console.log(e.key);
 
-//         searchInp.focus;
-//         console.log(e.key);
-//       }
-//     });
-//   }
-// });
+/**
+ * Event listener for the CTRL + K shortcut.
+ * When the user presses CTRL + K, this function is called.
+ * It focuses the search input field.
+ * @param {Event} event the event object
+ */
+document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey && event.key === "k") {
+    event.preventDefault();
+    searchInp.focus();
+  }
+});

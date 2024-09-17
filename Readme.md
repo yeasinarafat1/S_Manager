@@ -25,6 +25,14 @@ Student Manager is a PHP-based web application that allows administrators to man
 
 ## Demo
 
+![Student Manager Screenshot](/Demopics/homedemo.png)
+![Student Manager Screenshot](/Demopics/addstudentdemo.png)
+
+![Student Manager Screenshot](/Demopics/editstudentdemo.png)
+![Student Manager Screenshot](/Demopics/searchstudentdemo.png)
+
+### A demo is better then thousand word
+
 You can view a live demo of the application at [https://studentmanager.free.nf/?i=1](https://studentmanager.free.nf/?i=1)
 
 ## Installation
@@ -34,7 +42,7 @@ To set up Student Manager on your local machine, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/student-manager.git
+   git clone https://github.com/yeasinarafat1/S_Manager.git
    ```
 
 2. Move the project files to your web server's document root (e.g., `htdocs` for XAMPP).
@@ -47,7 +55,17 @@ To set up Student Manager on your local machine, follow these steps:
 
 ## Database Setup
 
+### Create Database
+
+#### Go to your php my admin dashboard Create a new database
+
+![Student Manager Screenshot](/Demopics/dbcreate.png)
+
 The application requires two MySQL tables: `admin` and `student`.
+
+#### To run mysql query Click on your newly created databae then click on new then create on sql then paste the sql query and click on go
+
+![Student Manager Screenshot](/Demopics/sqlquery.png)
 
 ### Admin Table
 
